@@ -4,7 +4,7 @@ variable "region" {
 }
 
 variable "s3_bucket_name" {
-  type = string
+  type    = string
   default = "devops-bootcamp-2023-use-case-1-bucket"
 }
 

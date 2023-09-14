@@ -1,6 +1,6 @@
 resource "aws_s3_bucket" "bootcamp_bucket" {
   bucket = var.s3_bucket_name
-  tags   = {
+  tags = {
     Name = "Bootcamp Use Case 1 bucket"
   }
 }
@@ -13,8 +13,8 @@ resource "aws_s3_bucket_ownership_controls" "bucket_ownership" {
 }
 
 resource "aws_s3_bucket_acl" "bucket_acl" {
-  bucket = aws_s3_bucket.bootcamp_bucket.id
-  acl    = "private"
+  bucket     = aws_s3_bucket.bootcamp_bucket.id
+  acl        = "private"
   depends_on = [aws_s3_bucket_ownership_controls.bucket_ownership]
 }
 
